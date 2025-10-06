@@ -43,19 +43,19 @@ namespace RSilva9.CodingTracker.Controllers
             string sessionDate = Validations.AskValidatedInput(
                 "Date",
                 "Please enter the date of the coding session you want to record (dd-MM-yyyy):",
-                Validations.isDateValid
+                Validations.IsDateValid
             );
 
             string startTime = Validations.AskValidatedInput(
                 "Start Time",
                 "Please enter session Start Sime (hh:mm):",
-                Validations.isTimeValid
+                Validations.IsTimeValid
             );
 
             string endTime = Validations.AskValidatedInput(
                 "End Time",
                 "Please enter session End Time. Make sure it is not equal to Start Time (hh:mm):",
-                Validations.isTimeValid
+                Validations.IsTimeValid
             );
 
             if(endTime == startTime)
@@ -65,7 +65,7 @@ namespace RSilva9.CodingTracker.Controllers
                     endTime = Validations.AskValidatedInput(
                         "End Time",
                         "Session End Time can not be equal to Start Time. Please, enter again (hh:mm):",
-                        Validations.isTimeValid
+                        Validations.IsTimeValid
                     );
                 } while (endTime == startTime);
             }
@@ -139,10 +139,10 @@ namespace RSilva9.CodingTracker.Controllers
 
             var fieldValidations = new Dictionary<string, Func<string, bool>>
             {
-                { "Date", Validations.isDateValid },
-                { "Start Time", Validations.isTimeValid },
-                { "End Time", Validations.isTimeValid },
-                { "Duration", Validations.isTimeValid }
+                { "Date", Validations.IsDateValid },
+                { "Start Time", Validations.IsTimeValid },
+                { "End Time", Validations.IsTimeValid },
+                { "Duration", Validations.IsTimeValid }
             };
 
             string newValue = Validations.AskValidatedInput(

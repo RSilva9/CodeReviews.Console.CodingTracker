@@ -21,24 +21,19 @@ namespace RSilva9.CodingTracker
             return input;
         }
 
-        internal static bool isDateValid(string date)
+        internal static bool IsDateValid(string date)
         {
             return DateTime.TryParseExact(date, "dd-MM-yyyy", new CultureInfo("en-US"), DateTimeStyles.None, out _);
         }
         
-        internal static bool isTimeValid(string time)
+        internal static bool IsTimeValid(string time)
         {
             return TimeSpan.TryParseExact(time, "hh\\:mm", CultureInfo.InvariantCulture, out _);
         }
 
-        internal static bool isGoalTimeValid(string time)
+        internal static bool IsGoalTimeValid(string time)
         {
             return float.TryParse(time, out _);
-        }
-
-        internal static bool areTimesEqual(string time1, string time2)
-        {
-            return time1 == time2;
         }
     }
 }

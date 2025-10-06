@@ -1,6 +1,5 @@
 ﻿using Dapper;
 using RSilva9.CodingTracker.Models;
-using System.Configuration;
 using System.Data.SQLite;
 using System.Globalization;
 
@@ -8,7 +7,7 @@ namespace RSilva9.CodingTracker
 {
     internal class Database
     {
-        static string connectionString = ConfigurationManager.AppSettings.Get("DBConnectionString");
+        static string connectionString = System.Configuration.ConfigurationManager.AppSettings.Get("DBConnectionString");
 
         internal static void CreateTables()
         {

@@ -14,13 +14,13 @@ namespace RSilva9.CodingTracker.Controllers
                 string startDate = Validations.AskValidatedInput(
                 "Date",
                 "Please enter the initial date of the report period:",
-                Validations.isDateValid
+                Validations.IsDateValid
                 );
 
                 string endDate = Validations.AskValidatedInput(
                 "Date",
                 "Please enter the ending date of the report period:",
-                Validations.isDateValid
+                Validations.IsDateValid
                 );
 
                 CodingSession[] fetchedSessions = Database.GetCodingRecordsBetweenDates(startDate, endDate);

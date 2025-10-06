@@ -58,7 +58,7 @@ namespace RSilva9.CodingTracker.Controllers
             string goalDate = Validations.AskValidatedInput(
                 "Date",
                 "Please enter the final date of the goal (dd-MM-yyyy):",
-                Validations.isDateValid
+                Validations.IsDateValid
             );
 
             while(DateTime.ParseExact(goalDate, "dd-MM-yyyy", CultureInfo.InvariantCulture) <= DateTime.Now)
@@ -66,14 +66,14 @@ namespace RSilva9.CodingTracker.Controllers
                 goalDate = Validations.AskValidatedInput(
                     "Date",
                     "Final date can't be equal or earlier than start date. Please, enter final date again (dd-MM-yyyy):",
-                    Validations.isDateValid
+                    Validations.IsDateValid
                 );
             }
 
             string goalHours = Validations.AskValidatedInput(
                 "Date",
                 "Please enter the goal objective in hours:",
-                Validations.isGoalTimeValid
+                Validations.IsGoalTimeValid
             );
 
             Goal newGoal = new Goal
@@ -140,9 +140,9 @@ namespace RSilva9.CodingTracker.Controllers
 
             var fieldValidations = new Dictionary<string, Func<string, bool>>
             {
-                { "Start Date", Validations.isDateValid },
-                { "End Date", Validations.isDateValid },
-                { "Goal Hours", Validations.isGoalTimeValid }
+                { "Start Date", Validations.IsDateValid },
+                { "End Date", Validations.IsDateValid },
+                { "Goal Hours", Validations.IsGoalTimeValid }
             };
 
             string newValue = Validations.AskValidatedInput(
@@ -158,7 +158,7 @@ namespace RSilva9.CodingTracker.Controllers
                     newValue = Validations.AskValidatedInput(
                         "Date",
                         "Final date can't be equal or earlier than start date. Please, enter final date again (dd-MM-yyyy):",
-                        Validations.isDateValid
+                        Validations.IsDateValid
                     );
                 }
             }
